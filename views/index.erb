@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" href="index.css">
+    <title>Holidays</title>
+  </head>
+  <body>
+    <table>
+        <tr>
+          <td>
+            <%time = Time.new%>
+            <%holidays = HolidApi.get(year: time.year, month: time.month)%>
+            <p>Holidays in <%=time.month%>/<%=time.year%></p>
+            <%holidays.each do |holiday|%><br>
+              <%=holiday[0]["name"]%>
+              <%=holiday[0]["date"]%>
+            <%end%>
+          </td>
+
+          <td>
+            <%holidays = HolidApi.get(year: 1993, month: 3)%>
+            <p>Holidays in March 1993</p>
+            <%holidays.each do |holiday|%><br>
+              <%=holiday[0]["name"]%>
+              <%=holiday[0]["date"]%>
+            <%end%>
+          </td>
+        </tr>
+      </table>
+  </body>
+</html>
