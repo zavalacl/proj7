@@ -5,15 +5,16 @@
   </head>
   <body>
       <h1>Holidays on...</h1>
+
         <form class="form">
           <label for="month">Month:</label>
-          <input name="month" type="number" min="1" max="12" value=<%= params["month"] %> required>
+          <input name="month" type="number" min="1" max="12" value="<%= params["month"] %>" required>
 
           <label for="day">Day:</label>
-          <input name="day" type="number" min="1" max="31" value=<%= params["day"] %> required>
+          <input name="day" type="number" min="1" max="31" value="<%= params["day"] %>" required>
 
           <label for="year">Year:</label>
-          <input name="year" type="number" min="1900" max="<%= Time.now.year %>" value=<%= params["year"] %> required>
+          <input name="year" type="number" min="1900" max="<%= Time.now.year %>" value="<%= params["year"] %>" required>
 
           <button type="submit">Generate!</button>
       </form><br>
